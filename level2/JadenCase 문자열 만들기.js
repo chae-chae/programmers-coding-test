@@ -15,3 +15,16 @@ function solution(s){
     const answer = ans.join("");    
     return answer;
 }
+
+function solution2(s) {
+    var answer = '';
+    let inputArr = s.split(" ");
+    let sentence = [];
+    
+    inputArr = inputArr.map((word) =>word.split("").map((c) => c.toLowerCase()).join(""));
+    inputArr.map((word, index) => sentence.push(word.slice(0,1).toUpperCase() + word.slice(1)));
+    
+    answer = sentence.join(" ");
+    
+    return answer;
+}
