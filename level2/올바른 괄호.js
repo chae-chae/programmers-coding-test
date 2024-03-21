@@ -20,3 +20,22 @@ function solution(s){
 
     return answer;
 }
+
+//
+
+function solution2(s){
+    let open = [];
+    for(let i = 0; i<s.length; i++){
+        let c = s[i];
+        if(c === "("){
+            open.push(c);
+        } else {
+            let t = open.pop();
+            if(t !== "(") {
+                open.push(t);
+            }
+        }
+    }
+    if (open.length === 0) return true;
+    return false;
+}
